@@ -1,16 +1,14 @@
-meteor-accounts-slack
-=====================
+# meteor-accounts-slack
 
 A meteor package for Slack's login service.
 
-Package Dependencies
---------------------
+## Package Dependencies
 
-* accounts-base
-* accounts-oauth
+- accounts-base
+- accounts-oauth
 
-Install
--------
+## Install
+
 ```
-meteor add acemtp:accounts-slack
+meteor add harveysanders:accounts-slack
 ```
