@@ -9,9 +9,11 @@ Package.onUse(function (api) {
   api.versionsFrom("2.7.3");
   api.use("ecmascript");
   api.mainModule("index.js");
+
+  // Meteor core packages
   api.use("oauth2", ["client", "server"]);
   api.use("oauth", ["client", "server"]);
-  // Remove http and use fetch instead
+  // Remove http and use fetch instead. (http deprecated in Meteor 1.3)
   api.use("http", ["server"]);
   api.use("templating", "client");
   api.use("underscore", "client");

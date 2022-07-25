@@ -1,10 +1,10 @@
 import { Meteor } from "meteor/meteor";
 import { Accounts } from "meteor/accounts-base";
+import { Slack } from "./index";
 
 Accounts.oauth.registerService("slack");
 
 if (Meteor.isClient) {
-  const { Slack } = require("./slack_client");
   Meteor.loginWithSlack = function (options, callback) {
     // support a callback without options
     if (!callback && typeof options === "function") {
