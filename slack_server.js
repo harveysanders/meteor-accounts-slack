@@ -1,6 +1,10 @@
 import { ServiceConfiguration } from "meteor/service-configuration";
 
-export const Slack = {};
+export const Slack = {
+  retrieveCredential(credentialToken, credentialSecret) {
+    return OAuth.retrieveCredential(credentialToken, credentialSecret);
+  },
+};
 
 OAuth.registerService("slack", 2, null, function (query) {
   const tokens = getTokens(query);
@@ -88,7 +92,3 @@ function getIdentity(accessToken) {
     );
   }
 }
-
-Slack.retrieveCredential = function (credentialToken, credentialSecret) {
-  return OAuth.retrieveCredential(credentialToken, credentialSecret);
-};

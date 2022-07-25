@@ -8,10 +8,10 @@ Package.describe({
 Package.onUse(function (api) {
   api.versionsFrom("2.7.3");
   api.use("ecmascript");
-  api.mainModule("slack.js");
-
+  api.mainModule("index.js");
   api.use("oauth2", ["client", "server"]);
   api.use("oauth", ["client", "server"]);
+  // Remove http and use fetch instead
   api.use("http", ["server"]);
   api.use("templating", "client");
   api.use("underscore", "client");
@@ -31,6 +31,8 @@ Package.onUse(function (api) {
     ],
     "client"
   );
+
+  api.addFiles("slack.js", ["server", "client"]);
 });
 
 Package.onTest(function (api) {
