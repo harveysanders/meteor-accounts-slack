@@ -1,15 +1,13 @@
 import { Random } from "meteor/random";
 import { ServiceConfiguration } from "meteor/service-configuration";
+import { OAuth } from "meteor/oauth";
 
 // Request Slack credentials for the user
 // @param options {optional}
 // @param credentialRequestCompleteCallback {Function} Callback function to call on
 //   completion. Takes one argument, credentialToken on success, or Error on
 //   error.
-export const requestCredential = function (
-  options,
-  credentialRequestCompleteCallback
-) {
+export function requestCredential(options, credentialRequestCompleteCallback) {
   // support both (options, callback) and (callback).
   if (!credentialRequestCompleteCallback && typeof options === "function") {
     credentialRequestCompleteCallback = options;
@@ -68,4 +66,4 @@ export const requestCredential = function (
     {width: 900, height: height}
   );
 */
-};
+}

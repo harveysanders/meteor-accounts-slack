@@ -1,4 +1,5 @@
 import { ServiceConfiguration } from "meteor/service-configuration";
+import { OAuth } from "meteor/oauth";
 
 export function retrieveCredential(credentialToken, credentialSecret) {
   return OAuth.retrieveCredential(credentialToken, credentialSecret);
